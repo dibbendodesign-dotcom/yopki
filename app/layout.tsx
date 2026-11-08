@@ -19,15 +19,22 @@ export const metadata: Metadata = {
   description: "Plan your trip with Yopki",
 };
 
+const isDev = process.env.NODE_ENV === "development";
+const isVercelPreview = process.env.NEXT_PUBLIC_VERCEL_ENV === "preview";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={cn("h-full antialiased", inter.variable)}>
       <body className="min-h-full flex flex-col">
         {children}
-        {/* Dev-only feedback toolbar, synced to the agentation MCP server */}
-        {process.env.NODE_ENV === "development" && (
+        {/*
+          Feedback toolbar: on locally (synced to the agentation MCP server)
+          and on Vercel preview deployments (copy-only). Never in production.
+        */}
+        {isDev && (
           <Agentation endpoint="http://localhost:4747" appName="Yopki" />
         )}
+        {isVercelPreview && <Agentation appName="Yopki (preview)" />}
       </body>
     </html>
   );
