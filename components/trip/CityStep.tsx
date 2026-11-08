@@ -237,7 +237,7 @@ export function CityStep() {
           </div>
         </div>
 
-        {/* Footer actions — selected-city count on the left, Cancel / Start planning on the right (pattern from Figma 18:12526). */}
+        {/* Footer actions — selected-city count on the left, Start planning on the right (pattern from Figma 18:12526). */}
         <footer className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-b-20 border-t border-stroke-soft-200 bg-bg-white-0 px-[31px] py-5">
           <p aria-live="polite" className="text-sm leading-5 tracking-[-0.084px] text-text-sub-600">
             {chosen.length > 0
@@ -246,9 +246,6 @@ export function CityStep() {
           </p>
 
           <div className="flex shrink-0 items-center gap-3">
-            <Button size="large" variant="neutral-stroke" onClick={() => router.push("/")}>
-              Cancel
-            </Button>
             <Button
               size="large"
               disabled={chosen.length === 0}
