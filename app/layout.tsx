@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Agentation } from "agentation";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +22,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={cn("h-full antialiased", inter.variable)}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {/* Dev-only feedback toolbar, synced to the agentation MCP server */}
+        {process.env.NODE_ENV === "development" && (
+          <Agentation endpoint="http://localhost:4747" appName="Yopki" />
+        )}
+      </body>
     </html>
   );
 }
