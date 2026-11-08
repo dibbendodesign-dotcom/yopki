@@ -1,5 +1,5 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="add-line" opacity="0.8">
-<path id="Vector" d="M12.95 12.95V6.65H15.05V12.95H21.35V15.05H15.05V21.35H12.95V15.05H6.65V12.95H12.95Z" fill="#004E89"/>
+<g id="add-line">
+<path id="Vector" d="M12.95 12.95V6.65H15.05V12.95H21.35V15.05H15.05V21.35H12.95V15.05H6.65V12.95H12.95Z" fill="#F26B3B"/>
 </g>
 </svg>

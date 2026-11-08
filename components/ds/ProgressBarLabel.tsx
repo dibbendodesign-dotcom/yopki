@@ -3,13 +3,15 @@ type ProgressBarLabelProps = {
   /** 0–100 */
   value: number;
   showPercentage?: boolean;
+  /** Bar colour — DS 🎨 Orange (default) or sky (brand-blue, trip build progress). */
+  tone?: "orange" | "sky";
 };
 
 /**
  * DS "Progress Bar Label [1.0]" — 🧩 Type=🔼 On Top, ⬇️ Show Bottom=Off,
  * composed with "Progress Bar [1.0]" + "Progress Bar Line [1.0]" (🎨 Orange).
  */
-export function ProgressBarLabel({ title, value, showPercentage = true }: ProgressBarLabelProps) {
+export function ProgressBarLabel({ title, value, showPercentage = true, tone = "orange" }: ProgressBarLabelProps) {
   const pct = Math.max(0, Math.min(100, Math.round(value)));
   return (
     <div className="flex w-full flex-col gap-1.5">
@@ -30,7 +32,7 @@ export function ProgressBarLabel({ title, value, showPercentage = true }: Progre
         className="relative h-1.5 w-full overflow-clip rounded-full bg-bg-soft-200"
       >
         <div
-          className="absolute inset-y-0 left-0 rounded-full bg-state-warning-base transition-[width]"
+          className={`absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ${tone === "sky" ? "bg-brand-blue" : "bg-state-warning-base"}`}
           style={{ width: `${pct}%` }}
         />
       </div>

@@ -17,14 +17,17 @@
   /* Typography — DS text styles are set in Inter */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --font-jakarta: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif; /* trip flow v2 */
-
   /* Brand */
   --color-primary-base: #f26b3b; /* primary-base */
-  --color-brand-blue: #004e89; /* PROVISIONAL name — trip flow v2 headings, active step, links */
+  --color-primary-alpha-16: rgba(255, 145, 71, 0.16); /* primary-alpha-16 — selected city chip fill */
+  --color-brand-blue: #004e89; /* sky/500 — trip flow headings, active step */
+  --color-brand-blue-alpha-8: rgba(0, 78, 137, 0.08); /* PROVISIONAL — sky/500 at 8%, selected trip-type card fill */
   --color-text-secondary: #4e4848; /* text/secondary */
-  --color-bg-selected: #f7f0ed; /* PROVISIONAL — selected city chip fill */
+  --color-neutral-100: #f2f5f8; /* neutral/100 — current stepper circle fill */
+  --color-stroke-step-current: #ddecff; /* PROVISIONAL name — current stepper circle border */
+  --color-stroke-step: #d0d5dd; /* PROVISIONAL name — stepper connector line */
   --color-state-warning-base: #f26b3b; /* state/warning/base (Progress Bar Line · Orange) */
+  --color-state-success-base: #1fc16b; /* state/success/base → green/500 (light mode) — build checklist done check */
 
   /* Backgrounds */
   --color-bg-white-0: #ffffff; /* bg/white-0 */
@@ -38,6 +41,7 @@
   /* Text & icons */
   --color-text-strong-950: #0e121b; /* text/strong-950 */
   --color-text-sub-600: #525866; /* text/sub-600 */
+  --color-text-soft-400: #99a0ae; /* text/soft-400 */
   --color-text-disabled-300: #cacfd8; /* text/disabled-300 */
   --color-text-white-0: #ffffff; /* static/static-white */
   --color-icon-sub-600: #525866; /* icon in Key Icons [1.0] */
@@ -57,6 +61,7 @@
   --shadow-x-small: 0 1px 2px 0 rgba(10, 13, 20, 0.03); /* regular-shadow/x-small */
   --shadow-medium: 0 16px 32px -12px rgba(14, 18, 27, 0.1); /* regular-shadow/medium */
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05); /* PROVISIONAL — from the frame */
+  --shadow-toggle-switch: 0 6px 10px 0 rgba(14, 18, 27, 0.06), 0 2px 4px 0 rgba(14, 18, 27, 0.03); /* toggle/switch — active Switch Toggle item */
 }
 
 body {

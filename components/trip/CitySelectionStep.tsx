@@ -110,7 +110,7 @@ export function CitySelectionStep() {
               onBlur={() => !draft.trim() && closeAdd()}
               placeholder="e.g. Krabi"
               maxLength={40}
-              className="flex-1"
+              wrapperClassName="flex-1"
             />
             <Button type="submit" disabled={!draft.trim()} className="w-20">
               Add

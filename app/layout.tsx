@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+/**
+ * Inter with its optical-size axis: browsers apply `opsz` automatically
+ * (font-optical-sizing: auto), so 32px titles render as "Inter Display".
+ */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
-
-/** Trip flow v2 screens are set in Plus Jakarta Sans (Figma "1" frame). */
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={cn("h-full antialiased", inter.variable, jakarta.variable)}>
+    <html lang="en" className={cn("h-full antialiased", inter.variable)}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
