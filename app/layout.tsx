@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 };
 
 const isDev = process.env.NODE_ENV === "development";
-const isVercelPreview = process.env.NEXT_PUBLIC_VERCEL_ENV === "preview";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -28,16 +27,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         {/*
-          Feedback toolbar: on locally (synced to the agentation MCP server)
-          and on Vercel preview deployments (copy-only, since a deployed page
-          can't reach localhost). Hidden in production.
+          Feedback toolbar on every environment. Locally it syncs to the
+          agentation MCP server; deployed pages (previews and production)
+          are copy-only, since they can't reach localhost.
         */}
-        {(isDev || isVercelPreview) && (
-          <Agentation
-            endpoint={isDev ? "http://localhost:4747" : undefined}
-            appName="Yopki"
-          />
-        )}
+        <Agentation
+          endpoint={isDev ? "http://localhost:4747" : undefined}
+          appName="Yopki"
+        />
       </body>
     </html>
   );
